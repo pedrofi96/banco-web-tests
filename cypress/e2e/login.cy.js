@@ -25,6 +25,7 @@ describe("Login", () => {
     cy.get('.toast')
       .should('have.text','Erro no login. Tente novamente.' )
       .should('be.visible')
+      
   });
 
 });
