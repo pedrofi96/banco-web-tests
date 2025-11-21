@@ -3,7 +3,7 @@ describe("Login", () => {
     //por estar no before each roda antes de cada it, não precisando estar dentro do it.
     //Arrange
     cy.visit("/");
-    // comando cy.visit só precisa do '/' pois estou usnaod base ur no cypress.config.js
+    // comando cy.visit só precisa do '/' pois estou usando base ur no cypress.config.js
     //para usar variavel de ambiente nativo do cypress configurado no package json:
     //cy.visit(Cypress.env('URL')); 
     cy.screenshot("apos-visitar-pagina");
