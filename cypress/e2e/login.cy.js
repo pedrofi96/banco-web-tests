@@ -11,14 +11,8 @@ describe("Login", () => {
 
   it("Login com dados validos deve permitir entrada no sistema", () => {
     //Act
-    cy.fixture("credenciais").then((credenciais) => {
-      cy.get("#username").click().type(credenciais.valida.usuario);
-      cy.get("#senha").click().type(credenciais.valida.senha);
-    });
-    cy.screenshot("apos-digitar-dados-validos");
-
-    cy.get("#login-section > .btn").click();
-    cy.screenshot("apos-logar");
+    cy.fazerLoginComCredenciaisValidas()
+    //cy.screenshot("apos-logar");
 
     //Assert
     cy.contains("h4", "Realizar Transferência").should("be.visible");
@@ -37,5 +31,7 @@ describe("Login", () => {
     cy.get(".toast")
       .should("have.text", "Erro no login. Tente novamente.")
       .should("be.visible");
+
+    cy.verificarMensagemNoToast('Erro no login. Tente novamente.')
   });
 });

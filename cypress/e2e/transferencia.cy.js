@@ -23,6 +23,8 @@ describe("Transferencias", () => {
 
     cy.contains('button', 'Transferir').click()
 
-    cy.get('.toast').should('have.text', 'Transferencia Realizada!')
+    cy.get('.toast').should('have.text', 'Transferência realizada!')
+    
+    cy.verificarMensagemNoToast('Transferência realizada!')
   });
 });
